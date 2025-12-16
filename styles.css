@@ -325,3 +325,31 @@ footer .social-icons li
         top: auto;
     }
 }
+
+}
+.download-cv {
+  margin-top: 2rem;
+}
+
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #000000;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cv-button:hover {
+  background-color: #535353;
+  transform: translateY(-2px);
+}
+
+.cv-button i {
+  font-size: 1rem;
+}
+
