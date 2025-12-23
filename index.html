@@ -56,6 +56,35 @@
   }
 }
 </script>
+
+<style>
+.age-counter {
+  font-weight: 600;
+  margin-top: 10px;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(6px);
+  animation: reveal 0.8s ease forwards;
+}
+
+.age-counter.animate {
+  animation: pulse 0.6s ease;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+</style>
+
 </head>
 
 <body>
@@ -113,28 +142,35 @@
 </footer>
 
 <script>
-const birthDate=new Date("2012-08-30T00:00:00");
+const birthDate = new Date("2012-08-30T00:00:00Z");
 
-function AgeCounter(){
-  const now=new Date();
-  let years=now.getFullYear()-birthDate.getFullYear();
-  let lastBirthday=new Date(now.getFullYear(),birthDate.getMonth(),birthDate.getDate());
-  if(now<lastBirthday){
+function updateAge() {
+  const now = new Date();
+  let years = now.getFullYear() - birthDate.getFullYear();
+  let lastBirthday = new Date(now.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+  if (now < lastBirthday) {
     years--;
-    lastBirthday=new Date(now.getFullYear()-1,birthDate.getMonth(),birthDate.getDate());
+    lastBirthday = new Date(now.getFullYear() - 1, birthDate.getMonth(), birthDate.getDate());
   }
-  let months=now.getMonth()-birthDate.getMonth();
-  if(now.getDate()<birthDate.getDate()) months--;
-  if(months<0) months+=12;
-  const el=document.getElementById("years-counter");
-  if(el){
-    el.textContent="I am "+years+"."+String(months+1)+" years old";
-  }
+  const diffMs = now - lastBirthday;
+  const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diffMs / (1000 * 60)) % 60);
+  const seconds = Math.floor((diffMs / 1000) % 60);
+
+  const el = document.getElementById("years-counter");
+  el.textContent = years + " years • " + days + " days • " +
+                   String(hours).padStart(2,'0') + ":" +
+                   String(minutes).padStart(2,'0') + ":" +
+                   String(seconds).padStart(2,'0');
+  el.classList.remove("animate");
+  void el.offsetWidth;
+  el.classList.add("animate");
 }
 
-AgeCounter();
-setInterval(AgeCounter,60000);
-</script>>
+updateAge();
+setInterval(updateAge, 1000);
+</script>
 
 </body>
 </html>
