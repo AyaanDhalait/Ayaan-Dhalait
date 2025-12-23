@@ -58,6 +58,67 @@
 </script>
 
 <style>
+body {
+  font-family: 'Bai Jamjuree', sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.masthead__menu a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 2rem auto;
+  gap: 2rem;
+}
+
+.sidebar {
+  width: 250px;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.sidebar img {
+  border-radius: 50%;
+  width: 150px;
+  margin-bottom: 1rem;
+}
+
+.social-icons li {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+.social-icons li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.page {
+  flex: 1;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
 .age-counter {
   font-weight: 600;
   margin-top: 10px;
@@ -83,6 +144,13 @@
   50% { transform: translateY(-2px); }
   100% { transform: translateY(0); }
 }
+
+footer {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
 </style>
 
 </head>
@@ -100,6 +168,81 @@
 </div>
 
 <div class="container">
+
+<aside class="sidebar">
+  <img src="Ayaan.jpg" alt="Ayaan Dhalait">
+  <h3>Ayaan Dhalait</h3>
+  <p>Software developer, CTO of the Student Initiative Board</p>
+  <p id="years-counter" class="age-counter"></p>
+  <ul class="social-icons">
+    <li><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</li>
+    <li><a href="https://github.com/AyaanDhalait"><i class="fab fa-github"></i> GitHub</a></li>
+    <li><a href="https://scholar.google.com/citations?hl=en&user=80ufeIEAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
+    <li><a href="https://ayaandhalait.itch.io/"><i class="fab fa-itch-io"></i> Itch.io</a></li>
+    <li><a href="https://www.instagram.com/ayaandhalait/"><i class="fab fa-instagram"></i> Instagram</a></li>
+    <li><a href="https://www.linkedin.com/in/ayaan-dhalait/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+    <li><a href="mailto:mr.dhalait@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+  </ul>
+</aside>
+
+<main class="page">
+<header>
+<h1>About Me</h1>
+</header>
+
+<section class="page__content">
+<p>Hey! I’m Ayaan, a developer who has been fascinated by technology since I got my first PC at a young age. My journey began with simple experiments and curiosity-driven learning and quickly evolved into building real projects.</p>
+
+<p>I started with Scratch and Code.org, moved into web development, explored game engines, and eventually specialized in Python and full-stack development.</p>
+
+<p>Being the CTO of the Student Initiative Board has helped me grow as a leader, problem solver, and mentor to other students.</p>
+
+<p>I am passionate about artificial intelligence, advanced computing, and creating software that makes a real-world impact.</p>
+
+<p>Looking ahead, I plan to continue learning, building, and pushing my limits as a developer.</p>
+</section>
+</main>
+
+</div>
+
+<footer>
+<p>&copy; 2025 Ayaan Dhalait. All rights reserved.</p>
+</footer>
+
+<script>
+const birthDate = new Date("2012-08-30T00:00:00Z");
+
+function updateAge() {
+  const now = new Date();
+  let years = now.getFullYear() - birthDate.getFullYear();
+  let lastBirthday = new Date(now.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+  if (now < lastBirthday) {
+    years--;
+    lastBirthday = new Date(now.getFullYear() - 1, birthDate.getMonth(), birthDate.getDate());
+  }
+
+  const diffMs = now - lastBirthday;
+  const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diffMs / (1000 * 60)) % 60);
+  const seconds = Math.floor((diffMs / 1000) % 60);
+
+  const el = document.getElementById("years-counter");
+  el.textContent = years + " years • " + days + " days • " +
+                   String(hours).padStart(2,'0') + ":" +
+                   String(minutes).padStart(2,'0') + ":" +
+                   String(seconds).padStart(2,'0');
+  el.classList.remove("animate");
+  void el.offsetWidth;
+  el.classList.add("animate");
+}
+
+updateAge();
+setInterval(updateAge, 1000);
+</script>
+
+</body>
+</html><div class="container">
 
 <aside class="sidebar">
   <img src="Ayaan.jpg" alt="Ayaan Dhalait">
@@ -174,3 +317,4 @@ setInterval(updateAge, 1000);
 
 </body>
 </html>
+
