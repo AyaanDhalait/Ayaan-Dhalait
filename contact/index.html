@@ -3,90 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects | Ayaan Dhalait</title>
-
-<meta name="description" content="Projects by Ayaan Dhalait including indie games, software experiments, and technical builds.">
-<meta name="author" content="Ayaan Dhalait">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://ayaan.is-a.dev/projects/">
-
-<meta property="og:title" content="Projects | Ayaan Dhalait">
-<meta property="og:description" content="Indie games, software experiments, and technical projects by Ayaan Dhalait.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ayaan.is-a.dev/projects/">
-<meta property="og:image" content="https://ayaan.is-a.dev/Ayaan.jpg">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Projects | Ayaan Dhalait">
-<meta name="twitter:description" content="Explore projects, games, and software experiments by Ayaan Dhalait.">
-<meta name="twitter:image" content="https://ayaan.is-a.dev/Ayaan.jpg">
-
+<title>Contact - Ayaan Dhalait</title>
 <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css">
-<link rel="icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
+<link rel="icon" type="image/png" href="../favicon.png">
 
+<style>
+  /* General Reset */
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Bai Jamjuree', sans-serif; }
+  body { background: #f7f7f7; color: #333; line-height: 1.6; }
+
+  a { color: #ff6600; text-decoration: none; transition: 0.3s; }
+  a:hover { text-decoration: underline; }
+
+  .masthead {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 50px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .masthead .logo { font-weight: 700; font-size: 1.5rem; color: #ff6600; }
+  .masthead__menu a { margin-left: 20px; font-weight: 500; }
+
+  .container { display: flex; padding: 50px; gap: 50px; max-width: 1200px; margin: auto; flex-wrap: wrap; }
+
+  aside.sidebar {
+    flex: 1; min-width: 250px; background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center; animation: fadeIn 1s ease forwards;
+  }
+  aside.sidebar img { width: 150px; border-radius: 50%; margin-bottom: 20px; }
+  aside.sidebar h3 { margin-bottom: 10px; }
+  aside.sidebar p { font-size: 0.9rem; margin-bottom: 20px; }
+  .social-icons { list-style: none; padding: 0; }
+  .social-icons li { margin: 10px 0; }
+  .social-icons i { margin-right: 8px; color: #ff6600; }
+
+  main.page {
+    flex: 2; min-width: 300px; background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    animation: fadeIn 1.2s ease forwards;
+  }
+  main.page header h1 { margin-bottom: 20px; color: #ff6600; }
+
+  /* Contact Form */
+  form.contact-form { display: flex; flex-direction: column; gap: 20px; margin-top: 20px; }
+  form.contact-form input, form.contact-form textarea {
+    padding: 15px 20px; border-radius: 10px; border: 1px solid #ddd; font-size: 1rem;
+    transition: all 0.3s ease; outline: none;
+  }
+  form.contact-form input:focus, form.contact-form textarea:focus { border-color: #ff6600; box-shadow: 0 0 10px rgba(255,102,0,0.2); }
+  form.contact-form textarea { resize: vertical; min-height: 120px; }
+  form.contact-form button {
+    padding: 15px 20px; border: none; border-radius: 10px;
+    background: #ff6600; color: #fff; font-weight: 600; cursor: pointer;
+    transition: all 0.3s ease; align-self: flex-start;
+  }
+  form.contact-form button:hover { background: #e65c00; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255,102,0,0.3); }
+
+  footer { text-align: center; padding: 20px; background: #fff; margin-top: 50px; box-shadow: 0 -2px 5px rgba(0,0,0,0.05); }
+
+  /* Animations */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
 <body>
 
 <div class="masthead">
-  <a href="https://ayaan.is-a.dev/" class="logo">Ayaan Dhalait</a>
+  <a href="../index.html" class="logo">Ayaan Dhalait</a>
   <nav class="masthead__menu">
-    <a href="/">Home</a>
-    <a href="/projects/">Projects</a>
-    <a href="/blogs/">Blog</a>
-    <a href="/contact/">Contact</a>
+    <a href="../index.html">Home</a>
+    <a href="../projects/">Projects</a>
+    <a href="../blogs/">Blog</a>
+    <a href="../contact/">Contact</a>
   </nav>
 </div>
 
 <div class="container">
+
   <aside class="sidebar">
-    <img src="/Ayaan.jpg" alt="Ayaan Dhalait">
+    <img src="../Ayaan.jpg" alt="Ayaan Dhalait">
     <h3>Ayaan Dhalait</h3>
+    <p>13-year-old software developer, CTO of the Student Initiative Board</p>
+    <ul class="social-icons">
+      <li><a href="https://github.com/AyaanDhalait"><i class="fab fa-github"></i> GitHub</a></li>
+      <li><a href="https://scholar.google.com/citations?hl=en&user=80ufeIEAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
+      <li><a href="https://ayaandhalait.itch.io/"><i class="fab fa-itch-io"></i> Itch.io</a></li>
+      <li><a href="https://www.linkedin.com/in/ayaan-dhalait/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+      <li><a href="mailto:mr.dhalait@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+    </ul>
   </aside>
 
   <main class="page">
-    <header><h1>Projects</h1></header>
+    <header>
+      <h1>Contact Me</h1>
+    </header>
+    <p>If you want to get in touch, you can fill out the form below or reach me through email, LinkedIn, or GitHub. I’m always happy to talk about coding, games, or tech experiments!</p>
 
-    <section class="projects">
-
-      <section class="project">
-        <h2>Fun Day Before Monday</h2>
-        <p>Fun Day Before Monday is an interactive activity generator built with Python and Streamlit. It helps users plan fun and productive activities for the weekend or before the start of the week. The app randomly suggests games, creative tasks, or mini challenges to make the day enjoyable.</p>
-        <p><strong>Features:</strong></p>
-        <ul>
-          <li>Random activity suggestions</li>
-          <li>User-friendly web interface using Streamlit</li>
-          <li>Categories for creativity, outdoor fun, and mental challenges</li>
-        </ul>
-        <p><strong>Tech Used:</strong> Python, Streamlit</p>
-        <nav class="masthead__menu">
-          <a href="https://fundaybeforemonday.streamlit.app/" target="_blank">View Project</a>
-        </nav>
-      </section>
-
-      <section class="project">
-        <h2>DHEngine</h2>
-        <p>DHEngine is a lightweight Python game engine built on top of Pygame. It simplifies the process of creating 2D games by providing ready-to-use functions, classes, and tools. Ideal for indie developers or students learning game development.</p>
-        <p><strong>Features:</strong></p>
-        <ul>
-          <li>Easy-to-use game loop and event handling</li>
-          <li>Tile mapping and sprite management</li>
-          <li>Custom physics and collision detection</li>
-          <li>Extensive documentation and examples</li>
-        </ul>
-        <p><strong>Tech Used:</strong> Python, Pygame</p>
-        <nav class="masthead__menu">
-          <a href="https://dhengine.github.io/" target="_blank">Documentation</a>
-          <a href="https://github.com/DHEngine/dhengine" target="_blank">Source Code</a>
-        </nav>
-      </section>
-
-      <section class="project">
-        <p><i>More projects coming soon!</i></p>
-      </section>
-
-    </section>
+    <!-- Animated Contact Form -->
+    <form class="contact-form" action="https://formspree.io/f/mwvejwkr" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </main>
 </div>
 
